@@ -9,11 +9,11 @@ public class Q13_matrixMultiplication {
         // for (int i = 0; i < ; i++) {
            
 
+        return multi;
         }
 
-        return multi;
 
-    }
+    
 
     public static void main(String[] args) {
 
