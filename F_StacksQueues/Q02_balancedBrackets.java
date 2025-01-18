@@ -6,7 +6,19 @@ public class Q02_balancedBrackets {
     // check if balanced i.e equal no. of opening and closing brackets and no mismatched brackets
     // () , [] , {} 
 
-    public static void func(Stack<Character> st , char ch) {
+    public static boolean func(Stack<Character> st , char ch) {
+        
+        if (st.size() == 0) {
+            return false;
+        }
+        else if(st.peek() != ch){
+            return false;
+        }
+        else{
+            st.pop();
+            return true;
+        }
+
         
     }
 
@@ -20,14 +32,32 @@ public class Q02_balancedBrackets {
                 st.push(ch);
             }
             else if(ch == ')'){
-                func(st , '(');
+                boolean val = func(st , '(');
+                if(val == false){
+                    System.out.println(val);
+                    return;
+                }
             }
             else if(ch == ']'){
-                func(st , '[');
+                boolean val = func(st , '[');
+                if(val == false){
+                    System.out.println(val);
+                    return;
+                }
             }
             else if(ch == '}'){
-                func(st, '{');
+                boolean val = func(st , '{');
+                if(val == false){
+                    System.out.println(val);
+                    return;
+                }
             }
+        }
+        if(st.size() == 0){
+            System.out.println(true);
+        }
+        else{
+            System.out.println(false);
         }
 
     }
@@ -35,8 +65,13 @@ public class Q02_balancedBrackets {
     public static void main(String[] args) {
         String str1 = "{[(a+b)+(b-c)] + (a-c)}";
         String str2 = "{[(x+y) + {z-c})}";
+        String str3 = "{[(x+y)}";
+        String str4 = "{()}]";
         checkBrackets(str1);
         checkBrackets(str2);
+        checkBrackets(str3);
+        checkBrackets(str4);
+
     }
     
 }
