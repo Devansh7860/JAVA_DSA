@@ -1,7 +1,7 @@
 package F_StacksQueues;
 import java.util.*;
 public class Q09_slidingWindowMaximum {
-
+    // print maximum element in every window
     public static void main(String[] args) {
         int[] arr = {2,9,3,8,7,12,6,14};
         Scanner scn = new Scanner(System.in);
@@ -29,10 +29,10 @@ public class Q09_slidingWindowMaximum {
             if(j<i){
                 j = i;
             }
-            while(nge[0] < i+k){
+            while(nge[j] < i+k){
                 j = nge[j];
             }
-            System.out.println(arr[j]);
+            System.out.print(arr[j] + " ");
 
         
         }
