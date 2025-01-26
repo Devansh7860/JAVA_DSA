@@ -3,6 +3,9 @@ package F_StacksQueues;
 import java.util.Stack;
 
 public class Q12_celebrityProblem {
+    // given is a matrix of 0s and 1s. Principal diagonal is 0.
+    // celebrity is that index who doesn't know anyone but everyone knows it
+    // basically in the row of that index, all elements should be 0 and in the column of that index all elements should be 1 (except for the diagonal element which is 0) 
     
     public static void main(String[] args) {
         int[][] arr = {{0,1,1,1} , 
