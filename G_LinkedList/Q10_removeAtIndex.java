@@ -46,11 +46,10 @@ public class Q10_removeAtIndex {
                 } else if (ind == size - 1) {
                     removeLast();
                 } else {
-                    for (int i = 0; i < size - 3; i++) {
+                    for (int i = 0; i < ind - 1; i++) {
                         temp = temp.next;
                     }
                     temp.next = temp.next.next;
-                    temp.next.next = null;
                     size--;
 
                 }
