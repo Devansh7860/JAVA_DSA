@@ -1,18 +1,16 @@
 package D_Arrays;
 import java.util.Scanner;
 public class Q06_rotateAnArray {
-    // rotate an array 
+    // rotate the array by k steps and return the rotated array
     // --------------------------------------------------------------------------------------------------------------
     
-    public static int[] reverse(int[] arr, int a , int b ) {
-        int[] rot = arr.clone(); // to coppy array
+    public static void reverse(int[] arr, int a , int b ) {
         while(a<b){
-            rot[a] = arr[b];
-            rot[b] = arr[a];
+            arr[a] = arr[b];
+            arr[b] = arr[a];
             a++;
             b--;
         }
-        return rot;
         
     }
     
@@ -27,12 +25,15 @@ public class Q06_rotateAnArray {
         if(k<0){
             k += n;
         }
-        int[] a1 = reverse(arr , 0 , n-k-1);
-        int[] a2 = reverse(a1 , n-k , n-1);
-        int[] rot = reverse(a2 , 0 , n-1);
+
+        // we are rotating the original array to solve in O(1) space complexity
+        // we can also store result in another array but then it will become O(N)
+        reverse(arr , 0 , n-1);
+        reverse(arr , 0 , k-1);
+        reverse(arr , k , n-1);
 
         for(int i = 0; i<n; i++){
-            System.out.print(rot[i] + " ");
+            System.out.print(arr[i] + " ");
         }
 
         sc.close();
