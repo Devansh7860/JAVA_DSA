@@ -7,8 +7,7 @@ public class Q07_inverseOfAnArray {
     public static int[] inverse(int[] arr) {
         int[] inv = new int[arr.length];
         for(int i = 0; i<arr.length; i++){
-            int temp = arr[i];
-            inv[temp] = i;
+            inv[arr[i]] = i;
         }
         return inv;
     }
