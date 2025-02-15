@@ -1,9 +1,9 @@
 package G_LinkedList;
 
+// SOLVED ON LEETCODE
 public class Q17_removeDuplicatesInSortedLL {
     // Remove duplicates in a sorted linked list
 
-    // SOLVED ON LEETCODE
     public class ListNode {
         ListNode next;
         int val;
