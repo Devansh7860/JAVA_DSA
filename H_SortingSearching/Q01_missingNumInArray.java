@@ -1,6 +1,7 @@
 package H_SortingSearching;
 
 // LEETCODE QUESTION
+// https://leetcode.com/problems/missing-number
 
 public class Q01_missingNumInArray {
     // array contains num from [0,n]

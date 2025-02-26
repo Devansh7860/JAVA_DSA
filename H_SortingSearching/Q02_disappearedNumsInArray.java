@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // LEETCODE QUESTION
+// https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array
 
 public class Q02_disappearedNumsInArray {
     // we have to find all the numbers not present in the array 
