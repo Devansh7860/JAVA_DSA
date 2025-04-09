@@ -5,26 +5,27 @@ import G_LinkedList.Q02_displayAndSize.Node;
 
 public class Q16_mergeSortLL {
     // sort a list using merge sort algorithm
+    // tc = n(logn)
 
-    public static LinkedList mergeSort(Node head , Node tail){
-        Q02_displayAndSize outer = new Q02_displayAndSize();
+    public static Node mergeSort(Node head){
 
-        if(head == tail){
-            LinkedList br = outer.new LinkedList();
-            br.addLast(head.data);
-            return br;
+        if(head == null || head.next == null){
+            return head;
         }
-        Node mid = midNode(head, tail); 
-        LinkedList fsh = mergeSort(head, mid);
-        LinkedList ssh = mergeSort(mid.next, tail);
-        LinkedList cl = Q15_merge2SortedLL.merge2SortedLL(fsh, ssh);
+        Node mid = midNode(head); 
+        Node left = head;
+        Node right = mid.next;
+        mid.next = null;
+        Node fsh = mergeSort(left);
+        Node ssh = mergeSort(right);
+        Node cl = Q15_merge2SortedLL.merge2SortedLL(fsh, ssh);
         return cl;
     }
 
-    public static Node midNode(Node head , Node tail){
+    public static Node midNode(Node head){
         Node s = head;
         Node f = head;
-        while(f != tail && f.next != tail){
+        while(f.next != null && f.next.next != null){
             s = s.next;
             f = f.next.next;
         }
@@ -42,11 +43,12 @@ public class Q16_mergeSortLL {
         l1.addLast(6);
         l1.addLast(5);
         l1.addLast(3);
-        LinkedList res = mergeSort(l1.head, l1.tail);
-        Node temp = res.head;
-        while(temp != null){
-            System.out.println(temp.data);
-            temp = temp.next;
+        Node res = mergeSort(l1.head);
+        while(res.next != null){
+            System.out.print(res.data + " ");
+            res = res.next;
         }
+
+
     }
 }
